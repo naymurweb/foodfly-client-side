@@ -1,19 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import logo from "../../../../image/logo.svg";
+import logo from "../../../../image/Home/icon.png";
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-100 container mx-auto py-8 justify-between">
+    <div style={{backgroundColor:'#282932' }}>
+       <div className="navbar container mx-auto py-8 justify-between text-white">
       <div className="navbar-start">
-        <a className="btn btn-ghost normal-case text-xl">
+        <Link to='/' className="btn btn-ghost normal-case text-xl">
           <img src={logo} alt="" />
-        </a>
+          <h3 className="text-2xl mx-2">FoodFly</h3>
+        </Link>
       </div>
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          <li>
+          <li className="hover:text-yellow-400">
             <Link to="/home">Home</Link>
           </li>
           <li>
@@ -45,7 +47,7 @@ const Navbar = () => {
         </label>
         <ul
           tabIndex={0}
-          className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+          className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-yellow-500 text-black rounded-box w-52"
         >
           <li>
             <Link to="/home">Home</Link>
@@ -61,6 +63,9 @@ const Navbar = () => {
         <a className="btn btn-warning">Login</a>
       </div>
     </div>
+
+    </div>
+   
   );
 };
 
