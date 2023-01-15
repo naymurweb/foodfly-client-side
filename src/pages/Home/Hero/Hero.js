@@ -13,7 +13,7 @@ const Hero = () => {
       <div className="md:flex justify-center items-center container mx-auto py-10 text-center md:text-left">
 
           <div className="md:w-1/2 text-white">
-            <h1 className="md:text-8xl text-5xl  font-semibold">
+            <h1 className="md:text-8xl text-5xl  font-bold">
               Express <br /> <span className="text-yellow-500">Home Delivery</span>
             </h1>
             <p className="my-5">
@@ -24,7 +24,7 @@ const Hero = () => {
             <button className=" btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-warning"> Read More</button>
           </div>
 
-        <div className="md:w-1/2 md:mt-0  w-fit mt-12" >
+        <div className="w-1/2 md:mt-0  w-fit mt-12" >
           <img src={hero} alt="" />
         </div>
 
