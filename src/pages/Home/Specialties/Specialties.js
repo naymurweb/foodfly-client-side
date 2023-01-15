@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Product from "../../Utilities/Product";
 
 const Specialties = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:7000/products")
+    fetch("http://localhost:7000/product")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -22,7 +23,9 @@ const Specialties = () => {
       </div>
 
       <div className="text-center my-8">
+        <Link to='/items'>
         <button className="btn btn-outline btn-warning ">VIEW ALL ITEMS </button>
+        </Link>
       </div>
     </div>
   );
