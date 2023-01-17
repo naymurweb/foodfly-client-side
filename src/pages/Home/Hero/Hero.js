@@ -21,7 +21,7 @@ const Hero = () => {
               Fusce in felis vel arcu maximus placerat eu ut arcu. Ut nunc ex,
               gravida vel porttitor et, pretium ac sapien.
             </p>
-            <button className=" btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-warning"> Read More</button>
+            <button className=" btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-warning"> VIEW OUR ITEMS</button>
           </div>
 
         <div className="w-1/2 md:mt-0  w-fit mt-12" >
