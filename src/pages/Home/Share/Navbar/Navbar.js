@@ -25,9 +25,6 @@ const Navbar = () => {
               <Link to="/blog">Blog</Link>
             </li>
 
-            <li>
-              <a>Item 3</a>
-            </li>
           </ul>
         </div>
 
@@ -64,7 +61,7 @@ const Navbar = () => {
 
         <div className="ml-4">
           <Link to='/login'>
-          <a className="btn btn-warning">Login</a>
+          <button className="btn btn-warning">Login</button>
           </Link>
         </div>
       </div>

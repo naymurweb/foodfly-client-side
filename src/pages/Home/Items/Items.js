@@ -4,7 +4,6 @@ import Product from "../../Utilities/Product";
 
 const Items = () => {
   const items = useLoaderData();
-  console.log(items);
   return (
     <div className="container mx-auto my-20">
       <div className="text-center my-8">
