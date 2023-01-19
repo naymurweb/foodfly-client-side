@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Context/UserContext";
 
 const Register = () => {
+  const data=useContext(AuthContext)
+  console.log(data);
   return (
     <div className="hero min-h-screen ">
       <div className="hero-content flex-col w-full">
