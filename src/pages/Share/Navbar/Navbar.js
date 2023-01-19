@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-
+import { AuthContext } from "../../../Context/UserContext";
 import logo from "../../../image/Home/icon.png";
 
 const Navbar = () => {
+  const { user, userLogout } = useContext(AuthContext);
+  const logoutHandaler = () => {
+    userLogout()
+    
+  };
   return (
     <div style={{ backgroundColor: "#282932" }}>
       <div className="navbar container mx-auto py-8 justify-between text-white">
@@ -19,12 +24,11 @@ const Navbar = () => {
               <Link to="/home">Home</Link>
             </li>
             <li>
-              <Link to="/items  ">Items</Link>
+              <Link to="/items">Items</Link>
             </li>
             <li>
               <Link to="/blog">Blog</Link>
             </li>
-
           </ul>
         </div>
 
@@ -60,9 +64,36 @@ const Navbar = () => {
         </div>
 
         <div className="ml-4">
-          <Link to='/login'>
-          <button className="btn btn-warning">Login</button>
-          </Link>
+          {user.email ? (
+            <div className="dropdown dropdown-end">
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full">
+                  <img src={user?.photoURL} alt="" />
+                </div>
+              </label>
+              <ul
+                tabIndex={0}
+                className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-yellow-500 text-black rounded-box w-52"
+              >
+                <li>
+                  <a className="justify-between">
+                    Profile
+                    <span className="badge">New</span>
+                  </a>
+                </li>
+                <li>
+                  <a>Settings</a>
+                </li>
+                <li>
+                  <a onClick={logoutHandaler}>Logout</a>
+                </li>
+              </ul>
+            </div>
+          ) : (
+            <Link to="/login">
+              <button className="btn btn-warning">Login</button>
+            </Link>
+          )}
         </div>
       </div>
     </div>

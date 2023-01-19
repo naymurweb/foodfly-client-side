@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/UserContext";
 
 const Register = () => {
   const { createUser,userProfileUpdate  } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location=useLocation()
+  const from = location.state?.from?.pathname || '/';
   const createUserHandaler = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -21,7 +23,7 @@ const Register = () => {
         .then(() => console.log("name update"))
         .catch((error) => console.log(error));    
         console.log(user);
-        navigate("/");
+        navigate(from, {replace:true});
       })
       .catch((error) => console.log(error));
 
