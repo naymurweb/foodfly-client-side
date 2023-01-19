@@ -1,6 +1,6 @@
 import React from "react";
-import logo from "../../../../image/Home/icon.png";
-import bg1 from "../../../../image/Home/bg1.png";
+import logo from "../../../image/Home/icon.png";
+import bg1 from "../../../image/Home/bg1.png";
 
 const Footer = () => {
   return (

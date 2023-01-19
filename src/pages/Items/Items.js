@@ -1,6 +1,6 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
-import Product from "../../Utilities/Product";
+import Product from "../Utilities/Product";
 
 const Items = () => {
   const items = useLoaderData();
@@ -13,10 +13,9 @@ const Items = () => {
 
       <div className="grid md:grid-cols-2  lg:grid-cols-3  gap-5">
         {items.map((item) => (
-          <Product key={item._id} item={item}></Product>
+          <Product key={item._id} item={item}></Product >
         ))}
       </div>
-
     </div>
   );
 };
