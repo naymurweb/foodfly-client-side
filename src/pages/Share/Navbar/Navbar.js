@@ -6,8 +6,7 @@ import logo from "../../../image/Home/icon.png";
 const Navbar = () => {
   const { user, userLogout } = useContext(AuthContext);
   const logoutHandaler = () => {
-    userLogout()
-    
+    userLogout();
   };
   return (
     <div style={{ backgroundColor: "#282932" }}>
@@ -23,6 +22,12 @@ const Navbar = () => {
             <li className="hover:text-yellow-400">
               <Link to="/home">Home</Link>
             </li>
+            {user?.email && (
+              <li className="hover:text-yellow-400">
+                <Link to="/myreviews">My Reviews</Link>
+              </li>
+            )}
+
             <li>
               <Link to="/items">Items</Link>
             </li>

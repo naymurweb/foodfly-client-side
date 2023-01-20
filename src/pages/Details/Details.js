@@ -10,7 +10,8 @@ const Details = () => {
   const { user } = useContext(AuthContext);
   const { image, name, details, _id } = item;
   const productId = _id;
-  const { displayName, photoURL } = user;
+  const { displayName, photoURL,email  } = user;
+  console.log('sssssssss  ',user);
   const reviewText = (event) => {
     setMassage(event.target.value);
   };
@@ -21,6 +22,7 @@ const Details = () => {
       name,
       displayName,
       photoURL,
+      email,
       massage,
     };
     fetch("http://localhost:7000/reviews", {

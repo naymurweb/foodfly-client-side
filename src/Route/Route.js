@@ -5,6 +5,7 @@ import Details from "../pages/Details/Details";
 import Home from "../pages/Home/Home/Home";
 import Items from "../pages/Items/Items";
 import Login from "../pages/Login/Login";
+import MyReviews from "../pages/MyReviews/MyReviews";
 import Register from "../pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 
@@ -31,6 +32,11 @@ export const route = createBrowserRouter([
         element: <Details></Details>,
         loader: ({ params }) =>
           fetch(`http://localhost:7000/products/${params.id}`),
+      },
+      {
+        path:'myreviews',
+        element:<PrivateRoute><MyReviews></MyReviews></PrivateRoute>,
+        loader:()=>fetch('http://localhost:7000/reviews')
       },
       {
         path: "/blog",
