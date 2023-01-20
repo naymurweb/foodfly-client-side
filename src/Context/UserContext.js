@@ -52,7 +52,7 @@ const UserContext = ({ children }) => {
       .catch((error) => console.log(error));
   };
 
-  const info = {
+      const info = {
     createUser,
     userProfileUpdate,
     user,
