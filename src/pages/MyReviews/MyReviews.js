@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Tbody from "../Utilities/Tbody";
 
 const MyReviews = () => {
   const data = useLoaderData();
+  const [product, setProduct] = useState(data);
+  console.log(product);
+
+  const deleteHandaler = (id) => {
+    fetch(`http://localhost:7000/reviews/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          const remaining = data.filter((item) => item._id !== id);
+          setProduct(remaining);
+        }
+      });
+  };
   return (
     <div>
       <div className="overflow-x-auto w-full container mx-auto ">
@@ -17,9 +32,13 @@ const MyReviews = () => {
             </tr>
           </thead>
           <tbody>
-            {
-                data.map(info=><Tbody data={info}></Tbody>)
-            }
+            {product.map((info) => (
+              <Tbody
+                key={info._id}
+                data={info}
+                deleteHandaler={deleteHandaler}
+              ></Tbody>
+            ))}
           </tbody>
           <tfoot></tfoot>
         </table>

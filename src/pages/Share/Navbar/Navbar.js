@@ -24,7 +24,7 @@ const Navbar = () => {
             </li>
             {user?.email && (
               <li className="hover:text-yellow-400">
-                <Link to="/myreviews">My Reviews</Link>
+                <Link to="/reviews">My Reviews</Link>
               </li>
             )}
 

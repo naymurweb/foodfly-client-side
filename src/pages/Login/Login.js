@@ -5,9 +5,11 @@ import { AuthContext } from "../../Context/UserContext";
 
 const Login = () => {
   const { loginUser, googleLogin } = useContext(AuthContext);
-  const navigate = useNavigate();
-  const location = useLocation();
-  const from = location.state?.from?.pathname || "/";
+  let navigate = useNavigate();
+  let location = useLocation();
+
+
+  let from = location.state?.from?.pathname || "/";
   
   const loginHandaler = (event) => {
     event.preventDefault();
