@@ -5,9 +5,9 @@ import Tbody from "../Utilities/Tbody";
 const MyReviews = () => {
   const data = useLoaderData();
   const [product, setProduct] = useState(data);
-  console.log(product);
 
   const deleteHandaler = (id) => {
+    console.log(id);
     fetch(`http://localhost:7000/reviews/${id}`, {
       method: "DELETE",
     })

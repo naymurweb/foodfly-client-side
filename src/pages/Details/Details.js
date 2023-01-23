@@ -10,12 +10,10 @@ const Details = () => {
   const { user } = useContext(AuthContext);
   const { image, name, details, _id } = item;
   const productId = _id;
-  const { displayName, photoURL,email  } = user;
-  console.log('sssssssss  ',user);
+  const { displayName, photoURL, email } = user;
   const reviewText = (event) => {
     setMassage(event.target.value);
   };
-  console.log(allData);
   const reviewHandaler = () => {
     const review = {
       productId,
@@ -94,15 +92,16 @@ const Details = () => {
             <p>Please login to add a review</p>
           )}
 
-<div className="">
-          {reviewData.map((data) => (
-            <Review data={data} total={reviewData.length} key={data._id}></Review>
-          ))}
+          <div className="">
+            {reviewData.map((data) => (
+              <Review
+                data={data}
+                total={reviewData.length}
+                key={data._id}
+              ></Review>
+            ))}
+          </div>
         </div>
-
-        </div>
-
-       
       </div>
     </div>
   );

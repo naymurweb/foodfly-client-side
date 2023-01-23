@@ -8,9 +8,8 @@ const Login = () => {
   let navigate = useNavigate();
   let location = useLocation();
 
-
   let from = location.state?.from?.pathname || "/";
-  
+
   const loginHandaler = (event) => {
     event.preventDefault();
     const form = event.target;

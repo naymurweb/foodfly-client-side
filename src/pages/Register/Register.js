@@ -1,17 +1,16 @@
 import React, { useContext } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/UserContext";
 
 const Register = () => {
-  const { createUser,userProfileUpdate  } = useContext(AuthContext);
+  const { createUser, userProfileUpdate } = useContext(AuthContext);
   const navigate = useNavigate();
-  const location=useLocation()
-  const from = location.state?.from?.pathname || '/';
+
   const createUserHandaler = (event) => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
-    const photo=form.photo.value;
+    const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
@@ -19,15 +18,13 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         form.reset();
-        userProfileUpdate (name,photo)
-        .then(() => console.log("name update"))
-        .catch((error) => console.log(error));    
+        userProfileUpdate(name, photo)
+          .then(() => console.log("name update"))
+          .catch((error) => console.log(error));
         console.log(user);
-        navigate(from, {replace:true});
+        navigate("/");
       })
       .catch((error) => console.log(error));
-
-   
   };
   return (
     <div className="hero min-h-screen ">

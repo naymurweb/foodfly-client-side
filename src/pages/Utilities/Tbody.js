@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 
 const Tbody = ({ data, deleteHandaler }) => {
-  const { photoURL, displayName, name, email, massage, _id } = data;
+  const { photoURL, displayName, name, email, massage, _id, productId } = data;
 
+  console.log(data);
   const [mass, setMass] = useState({});
 
-  const updateHandaler = (e) => {
+  const massgeHandler = (e) => {
     e.preventDefault();
     const mass = { mass: e.target.value };
     setMass(mass);
   };
-  console.log(mass);
-  const massgeHandler = (id) => {
+
+  const updateHandaler = (id) => {
     fetch(`http://localhost:7000/reviews/${id}`, {
       method: "PUT",
       headers: {
@@ -39,8 +40,8 @@ const Tbody = ({ data, deleteHandaler }) => {
         </div>
       </td>
       <td>{name}</td>
-      {/* <td>{massage.slice(0, 80)}</td> */}
-      <th>
+      <td>{massage.slice(0, 80)}</td>
+      <td>
         {/* The button to open modal */}
         <label htmlFor="my-modal-5" className="btn btn-ghost btn-xs">
           edit review
@@ -52,17 +53,17 @@ const Tbody = ({ data, deleteHandaler }) => {
           <div className="modal-box w-11/12 max-w-5xl">
             <h3 className="font-bold text-lg">Update</h3>
             <input
-              onChange={updateHandaler}
+              onChange={massgeHandler}
               type="text"
               className="w-full p-7 border-2 border-black"
             />
             <div className="modal-action">
               <label
-                onClick={() => massgeHandler(_id)}
+                onClick={() => updateHandaler(_id)}
                 htmlFor="my-modal-5"
                 className="btn"
               >
-                Yay!
+                update
               </label>
             </div>
           </div>
@@ -74,7 +75,7 @@ const Tbody = ({ data, deleteHandaler }) => {
         >
           delete
         </button>
-      </th>
+      </td>
     </tr>
   );
 };
