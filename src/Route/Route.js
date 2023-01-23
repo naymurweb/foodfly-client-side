@@ -36,17 +36,13 @@ export const route = createBrowserRouter([
       },
       {
         path: "/blog",
-        element: (
-          <PrivateRoute>
-            <Blog></Blog>
-          </PrivateRoute>
-        ),
+        element: <Blog></Blog>,
       },
       {
         path: "/reviews",
         element: (
           <PrivateRoute>
-            <MyReviews></MyReviews>   
+            <MyReviews></MyReviews>
           </PrivateRoute>
         ),
         loader: () => fetch("http://localhost:7000/reviews"),

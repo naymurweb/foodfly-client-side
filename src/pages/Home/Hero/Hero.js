@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import bg1 from "../../../image/Home/bg1.png";
 import bg2 from "../../../image/Home/bg2.png";
 import hero from "../../../image/Home/hero.png";
@@ -21,7 +22,9 @@ const Hero = () => {
               Fusce in felis vel arcu maximus placerat eu ut arcu. Ut nunc ex,
               gravida vel porttitor et, pretium ac sapien.
             </p>
+            <Link to='/items'>
             <button className=" btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-warning"> VIEW OUR ITEMS</button>
+            </Link>
           </div>
 
         <div className="w-1/2 md:mt-0  w-fit mt-12" >

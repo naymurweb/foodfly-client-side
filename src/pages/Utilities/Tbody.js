@@ -3,7 +3,6 @@ import React, { useState } from "react";
 const Tbody = ({ data, deleteHandaler }) => {
   const { photoURL, displayName, name, email, massage, _id, productId } = data;
 
-  console.log(data);
   const [mass, setMass] = useState({});
 
   const massgeHandler = (e) => {

@@ -22,7 +22,7 @@ const Specialties = () => {
         ))}
       </div>
 
-      <div className="text-center my-8">
+      <div className="text-center my-12">
         <Link to="/items">
           <button className="btn btn-outline btn-warning ">
             VIEW ALL ITEMS
