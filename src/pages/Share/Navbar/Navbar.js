@@ -22,18 +22,25 @@ const Navbar = () => {
             <li className="hover:text-yellow-400">
               <Link to="/home">Home</Link>
             </li>
+            <li>
+              <Link to="/items">Items</Link>
+            </li>
+
+            <li>
+              <Link to="/blog">Blog</Link>
+            </li>
+
+            {user?.email && (
+              <li className="hover:text-yellow-400">
+                <Link to="/additems">Add Items</Link>
+              </li>
+            )}
+
             {user?.email && (
               <li className="hover:text-yellow-400">
                 <Link to="/reviews">My Reviews</Link>
               </li>
             )}
-
-            <li>
-              <Link to="/items">Items</Link>
-            </li>
-            <li>
-              <Link to="/blog">Blog</Link>
-            </li>
           </ul>
         </div>
 

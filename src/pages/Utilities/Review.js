@@ -2,7 +2,6 @@ import React from "react";
 
 const Review = ({ data, total }) => {
   const { displayName, massage, name, photoURL } = data;
-//   console.log("dddddd", data);       
   return (
     <div className="card w-96 bg-base-100 shadow-xl mx-auto my-5 w-4/5">
       <div div className="card-body">
