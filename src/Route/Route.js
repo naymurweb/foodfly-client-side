@@ -26,13 +26,13 @@ export const route = createBrowserRouter([
       {
         path: "/items",
         element: <Items></Items>,
-        loader: () => fetch("http://localhost:7000/products"),
+        loader: () => fetch("https://foodfly.vercel.app/products"),
       },
       {
         path: "/items/:id",
         element: <Details></Details>,
         loader: ({ params }) =>
-          fetch(`http://localhost:7000/products/${params.id}`),
+          fetch(`https://foodfly.vercel.app/products/${params.id}`),
       },
       {
         path: "/blog",
@@ -45,7 +45,7 @@ export const route = createBrowserRouter([
             <MyReviews></MyReviews>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:7000/reviews"),
+        loader: () => fetch("https://foodfly.vercel.app/reviews"),
       },
       {
         path: "/additems",

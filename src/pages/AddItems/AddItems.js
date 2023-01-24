@@ -10,7 +10,7 @@ const AddItems = () => {
     const price = form.price.value;
     const item = { image, name, price, details };
 
-    fetch("http://localhost:7000/products", {
+    fetch("https://foodfly.vercel.app/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",

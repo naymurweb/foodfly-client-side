@@ -12,7 +12,7 @@ const Tbody = ({ data, deleteHandaler }) => {
   };
 
   const updateHandaler = (id) => {
-    fetch(`http://localhost:7000/reviews/${id}`, {
+    fetch(`https://foodfly.vercel.app/reviews/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -39,7 +39,7 @@ const Tbody = ({ data, deleteHandaler }) => {
         </div>
       </td>
       <td>{name}</td>
-      <td>{massage.slice(0, 80)}</td>
+      <td>{massage}</td>
       <td>
         {/* The button to open modal */}
         <label htmlFor="my-modal-5" className="btn btn-ghost btn-xs">

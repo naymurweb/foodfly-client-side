@@ -23,7 +23,7 @@ const Details = () => {
       email,
       massage,
     };
-    fetch("http://localhost:7000/reviews", {
+    fetch("https://foodfly.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -36,7 +36,7 @@ const Details = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:7000/reviews")
+    fetch("https://foodfly.vercel.app/reviews")
       .then((res) => res.json())
       .then((data) => setAllData(data));
   }, [massage]);

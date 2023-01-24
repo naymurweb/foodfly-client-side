@@ -8,7 +8,7 @@ const MyReviews = () => {
 
   const deleteHandaler = (id) => {
     console.log(id);
-    fetch(`http://localhost:7000/reviews/${id}`, {
+    fetch(`https://foodfly.vercel.app/reviews/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

@@ -5,7 +5,7 @@ import Product from "../../Utilities/Product";
 const Specialties = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:7000/product")
+    fetch("https://foodfly.vercel.app/product")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
